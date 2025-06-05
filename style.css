@@ -392,6 +392,8 @@ body, html
     }
 }
 
+/* ab hier neu*/
+
 .form-group {
   position: relative; /* für Tooltip-Positionierung */
   display: inline-block;
