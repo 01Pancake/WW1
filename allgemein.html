@@ -1,110 +1,144 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Allgemeine Projektdaten</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
 </head>
 <body class="task-main">
     <div class="tabs">
-
-       <!-- Buttons für demonstration auskommentiert und durch links ersetzt
+        <!-- Buttons für demonstration auskommentiert und durch links ersetzt
         <button class="tab-active">Allgemeine Projektdaten</button>
         <button class="tab">Personalkosten</button>
         <button class="tab">Kosten für projektbezogene Leistungen</button>
-        <button class="tab" >Sachkosten</button>
+        <button class="tab">Sachkosten</button>
         <button class="tab">Investitionen/Abschreibungen auf Geräte und Ausstattung</button>
         <button class="tab">Kosten für Räume und Flächen</button>
-    -->
+        -->
         <a href="allgemein.html" class="tab-active">Allgemeine Projektdaten</a>
         <a href="personalkosten.html" class="tab">Personalkosten</a>
         <a href="leistungen.html" class="tab">Kosten für projektbezogene Leistungen</a>
         <a href="sachkosten.html" class="tab">Sachkosten</a>
         <a href="abschreibungen.html" class="tab">Investitionen/Abschreibungen auf Geräte und Ausstattung</a>
         <a href="raeume.html" class="tab">Kosten für Räume und Flächen</a>
-        
     </div>
-    
+
     <form class="projekt-form">
         <div class="form-row">
             <div class="form-group">
-                <label for="projektname">Projekttitel:</label>
-                <input type="text" id="projekttitel" name="projekttitel" required>
+                <label for="projekttitel">Projekttitel:</label>
+                <input
+                    type="text"
+                    id="projekttitel"
+                    name="projekttitel"
+                    required
+                    title="Geben Sie hier den Titel des Projekts ein."
+                />
             </div>
             <div class="form-group">
                 <label for="auftraggeber">Auftraggeber:</label>
-                <input type="text" id="auftraggeber" name="auftraggeber" required>
+                <input
+                    type="text"
+                    id="auftraggeber"
+                    name="auftraggeber"
+                    required
+                    title="Name des Auftraggebers oder der Organisation, die das Projekt beauftragt."
+                />
             </div>
             <div class="form-group">
                 <label for="fakultaet">Fakultät:</label>
-                <input type="text" id="fakultaet" name="fakultart" required>
+                <input
+                    type="text"
+                    id="fakultaet"
+                    name="fakultaet"
+                    required
+                    title="Geben Sie die zugehörige Fakultät an."
+                />
             </div>
         </div>
         <div class="form-row">
             <div class="form-group">
                 <label for="verantwortlicher">Verantwortlicher:</label>
-                <input type="text" id="verantwortlicher" name="verantwortlicher" required>
+                <input
+                    type="text"
+                    id="verantwortlicher"
+                    name="verantwortlicher"
+                    required
+                    title="Name der Person, die für die Durchführung des Projekts verantwortlich ist."
+                />
             </div>
             <div class="form-group">
                 <label for="kostenstelle">Kostenstelle:</label>
-                <input type="text" id="kostenstelle" name="kostenstelle" required>
+                <input
+                    type="text"
+                    id="kostenstelle"
+                    name="kostenstelle"
+                    required
+                    title="Interne Kostenstelle zur Zuordnung der Projektkosten."
+                />
             </div>
             <div class="form-group">
-                <label for="weiterbildungstage">Anzahl Weiterbildungstage:</label>
-                <input type="number" id="anzahl-weiterbildungstage" name="anzahl-weiterbildungstage" min="0" required>
+                <label for="anzahl-weiterbildungstage">(Optional) Anzahl Weiterbildungstage:</label>
+                <input
+                    type="number"
+                    id="anzahl-weiterbildungstage"
+                    name="anzahl-weiterbildungstage"
+                    min="0"
+                    title="Anzahl der Weiterbildungstage (optional) im Rahmen des Projekts."
+                />
             </div>
         </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="zeitraum-von">Geplanter Zetraum von:</label>
-                    <input type="date" id="zeitraum-von" name="zeitraum-von" required>
-                </div>
-                <div class="form-group">
-                    <label for="zeitraum-bis">bis:</label>
-                    <input type="date" id="zeitraum-bis" name="zeitraum-bis" required>
-                </div>
-                <div class="form-group">
-                    <label for="wirtschaftlcher-bereich">Wirtschaftlicher Bereich:</label>
-                    <input type="text" id="wirtschaftlicher-bereich" name="wirtschaftlicher-bereich" required>
-                </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="zeitraum-von">Geplanter Zeitraum von:</label>
+                <input
+                    type="date"
+                    id="zeitraum-von"
+                    name="zeitraum-von"
+                    required
+                    title="Startdatum des geplanten Projektzeitraums."
+                />
             </div>
-            <div class="form-row"> 
-                <div class="form-group wide">
-                    <label for="projekt-kostentraegernummer">Projekt/<br> Kostenträgernummer:</label>
-                    <input type="text" id="projekt-kostentraegernummer" name="projekt-kostentraegernummer" required>
-                </div>
+            <div class="form-group">
+                <label for="zeitraum-bis">bis:</label>
+                <input
+                    type="date"
+                    id="zeitraum-bis"
+                    name="zeitraum-bis"
+                    required
+                    title="Enddatum des geplanten Projektzeitraums."
+                />
             </div>
-            <div class="form-row form-row-rigth">
-                <button type="submit" class="weiter-button">Weiter</button>
+            <div class="form-group">
+                <label for="wirtschaftlicher-bereich">Wirtschaftlicher Bereich:</label>
+                <input
+                    type="text"
+                    id="wirtschaftlicher-bereich"
+                    name="wirtschaftlicher-bereich"
+                    required
+                    title="Der wirtschaftliche Bereich, dem das Projekt zugeordnet wird."
+                />
             </div>
-        </div>     
+        </div>
+        <div class="form-row">
+            <div class="form-group wide">
+                <label for="projekt-kostentraegernummer">Projekt/<br />Kostenträgernummer:</label>
+                <input
+                    type="text"
+                    id="projekt-kostentraegernummer"
+                    name="projekt-kostentraegernummer"
+                    required
+                    title="Projekt- oder Kostenträgernummer zur eindeutigen Identifikation."
+                />
+            </div>
+        </div>
+        <div class="form-row form-row-rigth">
+            <button type="submit" class="weiter-button" title="Daten speichern und zum nächsten Schritt weitergehen.">
+                Weiter
+            </button>
+        </div>
     </form>
-
-        <!-- Auftraggeber -->
-<input type="text" id="auftraggeber" name="auftraggeber" required 
-       title="Name des Auftraggebers oder der Organisation, die das Projekt beauftragt.">
-
-<!-- Verantwortlicher -->
-<input type="text" id="verantwortlicher" name="verantwortlicher" required 
-       title="Name der Person, die für die Durchführung des Projekts verantwortlich ist.">
-
-<!-- Kostenstelle -->
-<input type="text" id="kostenstelle" name="kostenstelle" required 
-       title="Interne Kostenstelle zur Zuordnung der Projektkosten.">
-
-<!-- (Optional) Anzahl Weiterbildungstage -->
-<input type="number" id="anzahl-weiterbildungstage" name="anzahl-weiterbildungstage" min="0" 
-       title="Anzahl der Weiterbildungstage (optional) im Rahmen des Projekts.">
-
-<!-- Wirtschaftlicher Bereich -->
-<input type="text" id="wirtschaftlicher-bereich" name="wirtschaftlicher-bereich" required 
-       title="Der wirtschaftliche Bereich, dem das Projekt zugeordnet wird.">
-
-<!-- Projekt-/Kostenträgernummer -->
-<input type="text" id="projekt-kostentraegernummer" name="projekt-kostentraegernummer" required 
-       title="Projekt- oder Kostenträgernummer zur eindeutigen Identifikation.">
 </body>
-
 </html>
