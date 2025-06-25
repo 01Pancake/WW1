@@ -8,20 +8,20 @@ document.addEventListener('DOMContentLoaded', function()
 
     // beim Seite öffnen Formular verborgen
     form.style.display = 'none';
-    
+
 
     // bei + Gegenstand Button Klick Formular anzeigen
-    addButton.addEventListener('click', function() 
+    addButton.addEventListener('click', function()
     {
         form.style.display = 'block';
         submitButton.style.display = 'none';
     });
-    
+
     // klick auf Spichern Button in Liste übertragen
     saveButton.addEventListener('click', function(e)
     {
         e.preventDefault();
-        
+
 
         // holt die Eingegebenen werte aus dem Formular
         const bezeichnung = document.getElementById('bezeichnung').value;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function()
         const restbetrag = parseFloat(document.getElementById('restbetrag').value) || 0;
         const folgekosten = parseFloat(document.getElementById('finanzierungRestbetragFolgekosten').value) || 0;
 
-        // allert falls keine werte eingegeben wurden
+        // alert falls keine werte eingegeben wurden
         if (!bezeichnung &&( kaufpreis+ restbetrag + folgekosten === 0))
         {
             alert('Bitte geben Sie einen Wert ein.');
