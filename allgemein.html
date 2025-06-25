@@ -1,140 +1,149 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Allgemeine Projektdaten</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allgemeine Projektdaten</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script defer src="buttonScript.js"></script>
 </head>
-<body class="task-main">
-    <div class="tabs">
-        <!-- Buttons für demonstration auskommentiert und durch links ersetzt
+<body class="taskMain">
+<div class="logoutButtonContainer">
+  <button class="logoutButton" id="logoutButton">Abmelden</button>
+</div>
+<div class="tabsContainer">
+  <div class="tabs" id="tabs">
+    <!-- Buttons für demonstration auskommentiert und durch links ersetzt
         <button class="tab-active">Allgemeine Projektdaten</button>
         <button class="tab">Personalkosten</button>
         <button class="tab">Kosten für projektbezogene Leistungen</button>
-        <button class="tab">Sachkosten</button>
+        <button class="tab" >Sachkosten</button>
         <button class="tab">Investitionen/Abschreibungen auf Geräte und Ausstattung</button>
         <button class="tab">Kosten für Räume und Flächen</button>
-        -->
-        <a href="allgemein.html" class="tab-active">Allgemeine Projektdaten</a>
-        <a href="personalkosten.html" class="tab">Personalkosten</a>
-        <a href="leistungen.html" class="tab">Kosten für projektbezogene Leistungen</a>
-        <a href="sachkosten.html" class="tab">Sachkosten</a>
-        <a href="abschreibungen.html" class="tab">Investitionen/Abschreibungen auf Geräte und Ausstattung</a>
-        <a href="raeume.html" class="tab">Kosten für Räume und Flächen</a>
-    </div>
+    -->
+    <a href="allgemein.html" class="tabActive">Allgemeine Projektdaten</a>
+    <a href="personalkosten.html" class="tab">Personalkosten</a>
+    <a href="leistungen.html" class="tab">Kosten für projektbezogene Leistungen</a>
+    <a href="sachkosten.html" class="tab">Sachkosten</a>
+    <a href="abschreibungen.html" class="tab">Investitionen/Abschreibungen auf Geräte und Ausstattung</a>
+    <a href="raeume.html" class="tab">Kosten für Räume und Flächen</a>
+  </div>
+  <select class="tabsDropdown" id="tabsDropdown">
+    <option value="allgemein.html" selected>Allgemeine Projektdaten</option>
+    <option value="personalkosten.html">Personalkosten</option>
+    <option value="leistungen.html">Kosten für projektbezogene Leistungen</option>
+    <option value="sachkosten.html">Sachkosten</option>
+    <option value="abschreibungen.html">Investitionen/Abschreibungen</option>
+    <option value="raeume.html">Kosten für Räume und Flächen</option>
+  </select>
+</div>
 
-    <form class="projekt-form">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="projekttitel">Projekttitel:</label>
-                <input
-                    type="text" id="projekttitel" name="projekttitel" required
-                />
-            </div>
-            <div class="form-group">
-                <label for="auftraggeber">Auftraggeber:</label>
-                <input
-                    type="text"
-                    id="auftraggeber"
-                    name="auftraggeber"
-                    required
-                />
-                <span class="tooltip-text"Name des Auftraggebers oder der Organisation, die das Projekt beauftragt.</span>
-            </div>
-            <div class="form-group">
-                <label for="fakultaet">Fakultät:</label>
-                <input
-                    type="text"
-                    id="fakultaet"
-                    name="fakultaet"
-                    required
-                    title="Geben Sie die zugehörige Fakultät an."
-                />
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group">
-                <label for="verantwortlicher">Verantwortlicher:</label>
-                <input
-                    type="text"
-                    id="verantwortlicher"
-                    name="verantwortlicher"
-                    required
-                    title="Name der Person, die für die Durchführung des Projekts verantwortlich ist."
-                />
-            </div>
-            <div class="form-group">
-                <label for="kostenstelle">Kostenstelle:</label>
-                <input
-                    type="text"
-                    id="kostenstelle"
-                    name="kostenstelle"
-                    required
-                    title="Interne Kostenstelle zur Zuordnung der Projektkosten."
-                />
-            </div>
-            <div class="form-group">
-                <label for="anzahl-weiterbildungstage">(Optional) Anzahl Weiterbildungstage:</label>
-                <input
-                    type="number"
-                    id="anzahl-weiterbildungstage"
-                    name="anzahl-weiterbildungstage"
-                    min="0"
-                    title="Anzahl der Weiterbildungstage (optional) im Rahmen des Projekts."
-                />
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group">
-                <label for="zeitraum-von">Geplanter Zeitraum von:</label>
-                <input
-                    type="date"
-                    id="zeitraum-von"
-                    name="zeitraum-von"
-                    required
-                    title="Startdatum des geplanten Projektzeitraums."
-                />
-            </div>
-            <div class="form-group">
-                <label for="zeitraum-bis">bis:</label>
-                <input
-                    type="date"
-                    id="zeitraum-bis"
-                    name="zeitraum-bis"
-                    required
-                    title="Enddatum des geplanten Projektzeitraums."
-                />
-            </div>
-            <div class="form-group">
-                <label for="wirtschaftlicher-bereich">Wirtschaftlicher Bereich:</label>
-                <input
-                    type="text"
-                    id="wirtschaftlicher-bereich"
-                    name="wirtschaftlicher-bereich"
-                    required
-                    title="Der wirtschaftliche Bereich, dem das Projekt zugeordnet wird."
-                />
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group wide">
-                <label for="projekt-kostentraegernummer">Projekt/<br />Kostenträgernummer:</label>
-                <input
-                    type="text"
-                    id="projekt-kostentraegernummer"
-                    name="projekt-kostentraegernummer"
-                    required
-                    title="Projekt- oder Kostenträgernummer zur eindeutigen Identifikation."
-                />
-            </div>
-        </div>
-        <div class="form-row form-row-rigth">
-            <button type="submit" class="weiter-button" title="Daten speichern und zum nächsten Schritt weitergehen.">
-                Weiter
-            </button>
-        </div>
-    </form>
+<script>
+  const tabs = document.getElementById('tabs');
+  const dropdown = document.getElementById('tabsDropdown');
+
+  const changeWidth = 1500;
+  let tooSmall = window.innerWidth <= changeWidth;
+
+  function animateSwitch(showDropdown) {
+    if (showDropdown) {
+      tabs.classList.add('tabsHidden');
+      dropdown.classList.remove('dropdownHidden');
+    } else {
+      tabs.classList.remove('tabsHidden');
+      dropdown.classList.add('dropdownHidden');
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    const isSmall = window.innerWidth <= changeWidth;
+    if (isSmall !== tooSmall) {
+      animateSwitch(isSmall);
+      tooSmall = isSmall;
+    }
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (tooSmall) {
+      tabs.classList.add('tabsHidden');
+      dropdown.classList.remove('dropdownHidden');
+    } else {
+      dropdown.classList.add('dropdownHidden');
+    }
+
+    requestAnimationFrame(() => {
+      tabs.classList.add('navTransition');
+      dropdown.classList.add('navTransition');
+    });
+  });
+
+  dropdown.addEventListener('change', function () {
+    window.location.href = this.value;
+  });
+</script>
+<form class="projectForm">
+  <div class="formRow">
+    <div class="formGroup">
+      <label for="projectName">Projekttitel:</label>
+      <input type="text" id="projectName" name="projectName" required>
+    </div>
+    <div class="formGroup">
+      <label for="sponsor">Auftraggeber:</label>
+      <input type="text" id="sponsor" name="sponsor" required>
+      <span class="tooltipText">Name der Institution oder Person, die das projekt initialisiert oder finanziert. </span>
+    </div>
+    <div class="formGroup">
+      <label for="faculty">Fakultät:</label>
+      <input type="text" id="faculty" name="faculty" required>
+    </div>
+  </div>
+  <div class="formRow">
+    <div class="formGroup">
+      <label for="responsible">Verantwortlicher:</label>
+      <input type="text" id="responsible" name="responsible" required>
+      <span class="tooltipText">Name der hauptverantwortlichen Person (z.b. Projektleitung).</span>
+    </div>
+    <div class="formGroup">
+      <label for="costCenter">Kostenstelle:</label>
+      <input type="text" id="costCenter" name="costCenter" required>
+      <span class="tooltipText">Nummer der Kostenstelle gemäß Finanzsystem.</span>
+    </div>
+    <div class="formGroup">
+      <label for="trainingDays">Anzahl Weiterbildungstage:</label>
+      <input type="number" id="trainingDays" name="trainingDays" min="0" required>
+    </div>
+  </div>
+  <div class="formRow">
+    <div class="formGroup">
+      <label for="timeframeFrom">Geplanter Zetraum von:</label>
+      <input type="date" id="timeframeFrom" name="timeframeFrom" required>
+    </div>
+    <div class="formGroup">
+      <label for="timeframeUntil">bis:</label>
+      <input type="date" id="timeframeUnitl" name="timeframeUntil" required>
+    </div>
+    <div class="formGroup">
+      <label for="economicArea">Wirtschaftlicher Bereich:</label>
+      <input type="text" id="economicArea" name="economicArea" required>
+      <span class="tooltipText">Organisatorischer Bereich oder Einheit, die wirtschaftlich zuständig ist.</span>
+    </div>
+  </div>
+  <div class="formRow">
+    <div class="formGroup wide">
+      <label for="projectCostObjectNumber">Projekt / Kostenträgernummer:</label>
+      <input type="numbers" id="projectCostObjectNumber" name="projectCostObjectNumber" required>
+      <span class="tooltipText">Interne oder externe Projektnummer zur Zuordnung.</span>
+    </div>
+  </div>
+  <div class="formRow formRowRigth">
+    <button type="submit" class="weiterButton" id="submitButton">Weiter</button>
+  </div>
+  </div>
+</form>
 </body>
+<footer class="footer">
+  <p>&copy; 2025 Hochschule Mittweida</p>
+</footer>
 </html>
